@@ -14,8 +14,8 @@ build = {
    type = "builtin",
    modules = {
       Stream = "Stream.lua",
-      ["Stream.fetch"] = "Stream/fetch.lua",
-      ["Stream.popen"] = "Stream/popen.lua",
-      ["Stream.redis"] = "Stream/redis.lua"
+      -- ["Stream.fetch"] = "Stream/fetch.lua",
+      -- ["Stream.popen"] = "Stream/popen.lua",
+      -- ["Stream.redis"] = "Stream/redis.lua"
    }
 }
