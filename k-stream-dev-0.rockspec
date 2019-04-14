@@ -1,8 +1,7 @@
 package = "k-stream"
-version = "0.1-1"
+version = "dev-0"
 source = {
-   url = "git://github.com/norcalli/lua-stream",
-	 tag = "k-stream-v0.1-1"
+   url = "git://github.com/norcalli/lua-stream"
 }
 description = {
    homepage = "https://github.com/norcalli/lua-stream.git",
