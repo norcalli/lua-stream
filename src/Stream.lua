@@ -915,4 +915,9 @@ function Stream:linesBuffered()
 	return self:gsplitBuffered("\n")
 end
 
+function Stream:timeout(s)
+	local ntime = os.clock() + s
+	return self:takeUntil(function() return os.clock() > ntime end)
+end
+
 return Stream
