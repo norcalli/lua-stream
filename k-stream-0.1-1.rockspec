@@ -1,4 +1,4 @@
-package = "stream"
+package = "k-stream"
 version = "0.1-1"
 source = {
    url = "git://github.com/norcalli/lua-stream"
@@ -8,14 +8,11 @@ description = {
    license = "MIT"
 }
 dependencies = {
-   "lua >= 5.1"
+   "lua >= 5.1, < 5.4"
 }
 build = {
    type = "builtin",
    modules = {
       Stream = "src/Stream.lua",
-      -- ["Stream.fetch"] = "Stream/fetch.lua",
-      -- ["Stream.popen"] = "Stream/popen.lua",
-      -- ["Stream.redis"] = "Stream/redis.lua"
    }
 }
