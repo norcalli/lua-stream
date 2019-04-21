@@ -30,6 +30,12 @@ local function identity(...)
 	return ...
 end
 
+local function negate(fn)
+	return function(...)
+		return not fn(...)
+	end
+end
+
 local function call_if(fn, status, head, ...)
 	-- if status == false or head == STREAM_EXIT then
 	if not status then
@@ -320,12 +326,6 @@ function Stream:takeWhile(filterfn)
 				return true
 			end)
 	end)
-end
-
-local function negate(fn)
-	return function(...)
-		return not fn(...)
-	end
 end
 
 function Stream:takeUntil(filterfn)
@@ -842,6 +842,16 @@ function Stream.fromFileLines(file)
 			coroutine.yield(line)
 		end
 	end)
+end
+
+function Stream:toFile(file)
+	if type(file) == "string" then
+		file = io.open(file, "w")
+	end
+	self:each(function(part)
+		file:write(tostring(part))
+	end)
+	file:close()
 end
 
 function Stream.lines()
